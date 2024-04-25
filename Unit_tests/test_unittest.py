@@ -1,7 +1,5 @@
 import unittest 
 from chords_and_notes_dict import *
-# from piano_python import *
-import piano_python
 
 class Test_TestIncrementDecrement(unittest.TestCase):
 
