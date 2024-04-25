@@ -3,4 +3,5 @@ venv_2
 .vscode
 test_pylint.py
 test_python_functions.ipynb
-.Recorded
+Recorded
+piano_method_notebook.ipynb
