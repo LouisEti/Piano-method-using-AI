@@ -108,27 +108,6 @@ INTERVAL = {
     # 14: "Neuvième majeure"
 }
 
-NOTES_FR = {
-    1: "Do",
-    2: "Do#",
-    3: "Re♭",
-    4: "Re",
-    5: "Re#",
-    6: "Mi♭",
-    7: "Mi",
-    8: "Fa",
-    9: "Fa#",
-    10: "Sol♭",
-    11: "Sol",
-    12: "Sol#",
-    13: "La♭",
-    14: "La", 
-    15: "La#",
-    16: "Si♭",
-    17: "Si",
-}
-
-
 NOTE_ENG_TO_FR = {
     "C": "do",
     "B#": "sid",
@@ -157,76 +136,36 @@ NOTE_ENG_TO_FR = {
 }
 
 
-NOTES_FR_TO_ENGL = {
-    "do": "C",
-    "dod": "C#",
-    "reb": "D♭",
-    "re": "D",
-    "red": "D#",
-    "mib": "E♭",
-    "mi": "E",
-    "fa": "F",
-    "fad": "F#",
-    "solb": "G♭",
-    "sol": "G",
-    "sold": "G#",
-    "lab": "A♭",
-    "la": "A",
-    "lad": "A#",
-    "sib": "B♭",
-    "si": "B",
-}
-
-ANSWERS_FR = {
-    1: "do",
-    2: "dod",
-    3: "reb",
-    4: "re",
-    5: "red",
-    6: "mib",
-    7: "mi",
-    8: "fa",
-    9: "fad",
-    10: "solb",
-    11: "sol",
-    12: "sold",
-    13: "lab",
-    14: "la", 
-    15: "lad",
-    16: "sib",
-    17: "si",
-}
-
-INVERSIONS = ["R1", "R2", "R3", "R4"]
+INVERSIONS = ["", "R1", "R2", "R3", "R4"]
 
 # CHORDS_INVERSION_ALLOWED = [0, 1, 3, 6]
 CHORDS_INVERSION_ALLOWED = []
 
-CHORDS = {
-     0: "maj7",
-    1: "min7",
-    # 2: "min7/b5",
-    3: "7",
-    4: "dim",
-    # 5: "aug",
-    # 6: "minM7",
-    # 7: "sus4/7",
-    8: "6",
-    # 9: "min6",
+NOTES_INTERVALS_FOR_CHORDS = {
+    "maj7": [0, 4, 3, 4],
+    "min7": [0, 3, 4, 3],
+    # "min7/b5": [0, 3, 3, 4],
+    "7": [0, 4, 3, 3],
+    "dim": [0, 3, 3],
+    # "aug": [0, 4, 4],
+    # "minM7": [0, 3, 4, 4],
+    # "sus4/7": [0, 5, 2, 3],
+    "6": [0, 4, 3, 2],
+    # "min6": [0, 3, 4, 2],
 }
 
-NOTES_INTERVALS_FOR_CHORDS = {
-    0: [0, 4, 3, 4],
-    1: [0, 3, 4, 3],
-    2: [0, 3, 3, 4],
-    3: [0, 4, 3, 3],
-    4: [0, 3, 3],
-    5: [0, 4, 4],
-    6: [0, 3, 4, 4],
-    7: [0, 5, 2, 3],
-    8: [0, 4, 3, 2],
-    9: [0, 3, 4, 2],
-}
+LABEL_WIDGETS_FOR_CHORDS = {
+    'label0': (None, None),
+    'label1': (None, None),
+    'label2': (None, None),
+    'label3': (None, None),
+    'label4': (None, None),
+    'label5': (None, None),
+    'label6': (None, None),
+    'label7': (None, None),
+    'label8': (None, None),
+    'label9': (None, None),
+    }
 
 #Create lists of good/bad answers and their answer time for request_note function 
 list_answer_good_note, list_answer_bad_note = [], []
@@ -268,7 +207,7 @@ dict_regroup_lists = {"list_answer_good_note": list_answer_good_note,
                      }
 
 
-request_note_dict = {
+REQUEST_NOTE_DICT = {
     "Seconde mineure C": "D♭",
     "Seconde majeure C": "D",
     "Tierce mineure C": "E♭", 
@@ -416,7 +355,7 @@ request_note_dict = {
     
 }
 
-request_note_dict_reverse = {
+REQUEST_NOTE_DICT_REVERSE = {
     "Note dont la Seconde mineure est C": "B",
     "Note dont la Seconde majeure est C": "B♭",
     "Note dont la Tierce mineure est C": "A", 
