@@ -1,2 +1,7 @@
 __pycache__
-venv_piano/
+venv_2
+.vscode
+test_pylint.py
+test_python_functions.ipynb
+Recorded
+piano_method_notebook.ipynb
