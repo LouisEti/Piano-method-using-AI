@@ -468,7 +468,7 @@ def process_midi_messages(input_port: mido) -> None:
                 handle_midi_message(msg, output_port)
             else:
                 pass
-        time.sleep(0.001)  # Sleep for 10 milliseconds (adjust as needed)
+        time.sleep(0.001)
 
 
 def start_midi_processing(input_port: mido) -> None:
@@ -1272,6 +1272,7 @@ def main(width=1600, height=400) -> None:
 
 if __name__ == "__main__":
     session_break = False
+    quit_button_pressed = False
     dict_session = copy.deepcopy(dict_regroup_lists)
     main()
     # Del the overlayed_image_label widget if it exists or a threading error would be raised because the overlayed_image_label is a global variable in the display_note function
@@ -1282,7 +1283,7 @@ if __name__ == "__main__":
     session_break = True
     close_port(input_port, output_port)
     datetime_name = datetime.now().strftime("%Y_%m_%d_%H%M%S")
-    if quit_button_pressed == False:
+    if quit_button_pressed == False and 'activate_function' in globals():
         if activate_function is request_note:
             # If not all the lists are not empty (= if at least one of the lists in not empty), save the dict
             if not all(not bool(lst) for lst in dict_to_save.values()):
