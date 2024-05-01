@@ -454,20 +454,21 @@ def handle_midi_message(msg: mido.Message, output_port) -> None:
 def process_midi_messages(input_port: mido) -> None:
     """
     Process the MIDI message function when a key on the controller is pressed("note_on") and unpressed ("note_off")
-    This function is the threaded function
+    This function is the threaded function.\n
+    The while loop allows stopping the thread function once the session ends (closing the tkinter window).\n
+    The time.sleep(0.001) command reduce charge of CPU caused by the "while" loop
     """
 
     global note_container, msg
 
     note_container = []
-    for msg in input_port:
-        if msg.type == "note_on" or msg.type == "note_off":
-            if (
-                not session_break
-            ):  # if True, run the threaded function / if False, don't run this threaded function
+    while session_break == False:
+        for msg in input_port.iter_pending():
+            if msg.type == "note_on" or msg.type == "note_off":
                 handle_midi_message(msg, output_port)
-        else:
-            pass
+            else:
+                pass
+        time.sleep(0.001)  # Sleep for 10 milliseconds (adjust as needed)
 
 
 def start_midi_processing(input_port: mido) -> None:
