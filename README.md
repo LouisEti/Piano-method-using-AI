@@ -30,6 +30,7 @@ It is by learning what we know the least that we improve the best
 - Create a venv (with python 3.11.7) 
 - Install all dependencies using ```` pip install -r requirements.txt ````
 - Run ```` python piano_method.py ```` in your terminal to launch the program 
+- In the Input/Output ports selection, choose your controller as input and the "Microsoft GS Wavetable Synth" as output
 <br>
 
 
